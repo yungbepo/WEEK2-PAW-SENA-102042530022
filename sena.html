@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Ridho Sena — Personal Page</title>
+
+<!-- HTML Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%238B3DFF%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>R</text></svg>">
+
+<!-- HTML Link: Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --purple:#8B3DFF;
+    --teal:#00C4CC;
+    --coral:#FF6F61;
+    --ink:#1B1730;
+    --lavender:#F4F0FF;
+    --paper:#FFFFFF;
+    --line:#E7E1FB;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    font-family:'Poppins', sans-serif;
+    background:var(--lavender);
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  a{ text-decoration:none; color:inherit; }
+
+  /* ===== NAVBAR ===== */
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  nav h2{ font-size:20px; font-weight:700; }
+  nav h2 span{ color:var(--purple); }
+  nav ul{ list-style:none; display:flex; gap:28px; }
+  nav ul li a{ font-size:14px; font-weight:500; color:#5B5470; }
+  nav ul li a:hover{ color:var(--purple); }
+
+  /* ===== HERO ===== */
+  header.hero{
+    background: linear-gradient(135deg, var(--purple) 0%, #6A2EDB 45%, var(--teal) 100%);
+    color:#fff;
+    padding:70px 8% 90px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;
+    right:-80px; bottom:-120px;
+    width:300px; height:300px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+  }
+
+  .avatar-wrap{
+    width:150px; height:150px;
+    margin:0 auto 22px;
+    border-radius:50%;
+    padding:6px;
+    background: linear-gradient(135deg, var(--coral), #FFD166);
+  }
+  .avatar-wrap picture img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid var(--paper);
+    display:block;
+  }
+
+  h1.name{ font-family:'Fraunces', serif; font-style:italic; font-size:44px; font-weight:500; }
+  header.hero h4{ font-weight:400; font-size:16px; margin-top:10px; color:#EDE6FF; letter-spacing:.3px; }
+
+  .socials{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .socials a{
+    width:46px; height:46px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:50%;
+    font-size:18px;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .socials a:hover{ background:#fff; color:var(--purple); transform:translateY(-4px); }
+
+  /* ===== MAIN ===== */
+  main{ max-width:900px; margin:-40px auto 0; padding:0 8% 60px; }
+
+  section.card{
+    background:var(--paper);
+    border-radius:20px;
+    padding:36px 40px;
+    margin-bottom:28px;
+    box-shadow:0 12px 30px rgba(84,44,169,0.08);
+  }
+
+  section.card h2{ font-size:24px; margin-bottom:14px; }
+  section.card h2 em{ font-style:italic; color:var(--purple); }
+
+  section.card p{ color:#4A4560; font-size:15.5px; text-align:justify; }
+
+  /* Info table */
+  table.info{ width:100%; border-collapse:collapse; margin-top:18px; }
+  table.info th, table.info td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  table.info th{
+    width:38%;
+    color:var(--purple);
+    font-weight:600;
+  }
+  table.info tr:last-child th, table.info tr:last-child td{ border-bottom:none; }
+
+  .tag-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .tag{
+    background:var(--lavender);
+    color:var(--purple);
+    padding:7px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+  }
+
+  /* Clock */
+  .clock-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:linear-gradient(135deg, var(--teal), var(--purple));
+    color:#fff;
+    border-radius:16px;
+    padding:20px 28px;
+    margin-top:6px;
+  }
+  .clock-box h5{ font-weight:400; font-size:13px; opacity:.85; }
+  .clock-box h3#liveClock{ font-size:22px; font-weight:700; margin-top:4px; }
+
+  footer{
+    text-align:center;
+    padding:26px 8%;
+    font-size:13px;
+    color:#8A84A0;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+  }
+  footer h6{ font-weight:500; }
+
+  @media(max-width:600px){
+    nav ul{ display:none; }
+    h1.name{ font-size:32px; }
+    section.card{ padding:26px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Ridho<span>.dev</span></h2>
+  <ul>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#data">Data Diri</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+</nav>
+
+<!-- HTML Heading 1 & HTML Background/Color Text -->
+<header class="hero">
+  <div class="avatar-wrap">
+    <!-- HTML Picture -->
+    <picture>
+      <source media="(min-width:600px)" srcset="https://api.dicebear.com/7.x/initials/svg?seed=Ridho%20Sena&backgroundColor=8B3DFF">
+      <img src="https://api.dicebear.com/7.x/initials/svg?seed=Ridho%20Sena&backgroundColor=8B3DFF" alt="Foto Muhammad Ridho Sena">
+    </picture>
+  </div>
+
+  <h1 class="name">Muhammad Ridho Sena</h1>
+  <h4>Mahasiswa Sistem Informasi · Fakultas Rekayasa Industri</h4>
+
+  <div class="socials">
+    <a href="https://x.com/" target="_blank" title="X">𝕏</a>
+    <a href="https://github.com/" target="_blank" title="Github">GH</a>
+    <a href="https://instagram.com/" target="_blank" title="Instagram">IG</a>
+    <a href="https://linkedin.com/" target="_blank" title="LinkedIn">in</a>
+    <a href="mailto:ridho.sena@example.com" title="Email">✉</a>
+  </div>
+</header>
+
+<main>
+  <section class="card" id="about">
+    <h2>Halo, saya <em>Ridho</em> 👋</h2>
+    <p>
+      Saya adalah mahasiswa Program Studi Sistem Informasi di Fakultas Rekayasa Industri
+      yang tertarik pada pengembangan web, desain antarmuka, dan analisis data.
+      Halaman ini merupakan personal web statis yang dibangun menggunakan HTML dan CSS
+      sebagai bagian dari studi kasus mata kuliah pemrograman web.
+    </p>
+    <div class="tag-row">
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+      <span class="tag">Sistem Informasi</span>
+      <span class="tag">Web Development</span>
+    </div>
+  </section>
+
+  <section class="card" id="data">
+    <h2>Data <em>Diri</em></h2>
+    <!-- HTML Table -->
+    <table class="info">
+      <tr><th>Nama Lengkap</th><td>Muhammad Ridho Sena</td></tr>
+      <tr><th>NIM</th><td>102042530022</td></tr>
+      <tr><th>Program Studi</th><td>Sistem Informasi</td></tr>
+      <tr><th>Fakultas</th><td>Rekayasa Industri</td></tr>
+    </table>
+
+    <h3 style="margin-top:24px; font-size:17px;">Waktu Akses Saat Ini</h3>
+    <div class="clock-box">
+      <div>
+        <h5>Tanggal & waktu saat halaman dibuka</h5>
+        <!-- HTML Date and Time -->
+        <h3 id="liveClock"><time id="timeTag" datetime="">memuat...</time></h3>
+      </div>
+      <span style="font-size:26px;">🕒</span>
+    </div>
+  </section>
+
+  <section class="card" id="kontak">
+    <h2>Mari <em>Terhubung</em></h2>
+    <p>Klik salah satu ikon di bagian atas halaman untuk mengunjungi akun sosial media saya —
+    setiap ikon akan membuka tab baru menuju profil terkait.</p>
+  </section>
+</main>
+
+<footer>
+  <h6>© 2026 Muhammad Ridho Sena — Dibuat dengan HTML & CSS</h6>
+</footer>
+
+<script>
+  function updateClock(){
+    const now = new Date();
+    const options = { weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit' };
+    const formatted = now.toLocaleDateString('id-ID', options);
+    const el = document.getElementById('timeTag');
+    el.textContent = formatted;
+    el.setAttribute('datetime', now.toISOString());
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
